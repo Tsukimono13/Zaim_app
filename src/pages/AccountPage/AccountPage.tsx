@@ -16,7 +16,7 @@ export const AccountPage = () => {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
 
-  const { isLoggedIn, login, logout } = useAuth();
+  const { isLoggedIn } = useAuth();
 
   const handleOkClick = () => {
     setIsOpen(false);

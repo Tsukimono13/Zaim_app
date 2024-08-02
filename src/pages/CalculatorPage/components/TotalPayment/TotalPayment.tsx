@@ -19,7 +19,7 @@ export const TotalPayment = (props: TotalPaymentProps) => {
     props;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [errorModel, setErrorModel] = useState(false);
-  const { isLoggedIn, login, logout } = useAuth();
+  const { isLoggedIn } = useAuth();
 
   const handleAddLoans = () => {
     if (isLoggedIn) {

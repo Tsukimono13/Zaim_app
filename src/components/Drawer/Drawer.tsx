@@ -81,7 +81,7 @@ export default function Drawer({ setShowCallbackPage }: DrawerProps) {
       >
         <a.div>{isOpen ? <CloseIcon /> : <OpenIcon />}</a.div>
         <p>Акции</p>
-        {items.map((entry, i) => (
+        {items.map((entry) => (
           <div
             key={entry.text}
             onClick={() => setShowCallbackPage(true)}

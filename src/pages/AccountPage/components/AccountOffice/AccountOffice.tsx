@@ -5,7 +5,6 @@ import { useState } from "react";
 import { CallbackPage } from "@/pages/CallbackPage/CallbackPage";
 import App from "@/App";
 import { ActiveLoans } from "../ActiveLoans";
-import { InterCode } from "../InterCode";
 import { TermsOfIssue } from "../TermsOfIssue";
 import { useAuth } from "@/app/context/AuthProvider/AuthProvider";
 
@@ -14,7 +13,7 @@ export const AccountOffice = () => {
   const [showCodeInter, setShowCodeInter] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [showCallback, setShowCallback] = useState(false);
-  const { isLoggedIn, login, logout } = useAuth();
+  const { logout } = useAuth();
 
   if (showCodeInter) {
     return <App />;

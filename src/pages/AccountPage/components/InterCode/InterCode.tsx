@@ -20,7 +20,7 @@ export const InterCode = (props: InterCodeProps) => {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
 
-  const { isLoggedIn, login, logout } = useAuth();
+  const { login } = useAuth();
 
   const handleLogin = () => {
     if (inputValue === "19875" && phoneNumber) {
