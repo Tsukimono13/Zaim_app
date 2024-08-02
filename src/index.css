@@ -8,6 +8,10 @@
   font-family: "Gotham Pro", sans-serif;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -23,6 +27,7 @@ a {
 
 input {
   outline: none;
+  transform: none;
 }
 
 button {
