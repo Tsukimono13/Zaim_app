@@ -1,0 +1,18 @@
+.input {
+    width: 100%;
+    box-shadow: var(--input-shadow);
+    border-radius: 10px;
+    background-color: var(--card-bg);
+    font-family: 'Gotham Pro', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 13px;
+    padding: 21px 17px;
+    border: none;
+
+    &::placeholder {
+        color: var(--placeholder-color);
+        font-weight: 400;
+    }
+}
+

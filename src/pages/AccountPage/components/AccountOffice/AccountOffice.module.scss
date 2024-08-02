@@ -1,0 +1,36 @@
+@import '../../../../app/styles/animation.scss';
+.container {
+    height: 872px;
+    @include slideIn(0.5s);
+}
+
+.wrapper {
+    padding: 76px 31px 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 48px;
+
+    .title {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 19px;
+        margin: 0 41px 0 8px;
+    }
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+    padding-bottom: 43px;
+
+    .name {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 13px;
+    }
+}

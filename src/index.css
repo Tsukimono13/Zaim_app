@@ -1,0 +1,32 @@
+@import "./app/styles/variables.scss";
+@import "./app/styles/fonts.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gotham Pro", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--main-text-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+input {
+  outline: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}

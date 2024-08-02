@@ -1,0 +1,14 @@
+.menu {
+    display: grid;
+    grid-template-columns: repeat(2, 158px);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 15px;
+}
+
+.menu> :last-child div {
+    padding-bottom: 14px;
+}
+
+.menu> :last-child h3 {
+    margin-top: 13px;
+}

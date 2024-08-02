@@ -1,0 +1,22 @@
+.textarea {
+    width: 100%;
+    padding: 21px 17px;
+    resize: none;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px 0px #3640411A inset;
+    font-family: 'Gotham Pro', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 13px;
+    border: none;
+    height: 100%;
+
+    &::placeholder {
+        font-weight: 400;
+        color: #AEAEAE;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

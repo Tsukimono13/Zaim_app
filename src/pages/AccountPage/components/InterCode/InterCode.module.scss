@@ -1,0 +1,22 @@
+@import '../../../../app/styles/animation.scss';
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 67px;
+    margin-top: 41px;
+    @include slideIn(0.5s);
+
+    .signIn {
+        width: 137px;
+        height: 40px;
+    }
+}
+
+.error {
+    color: var(--error-color);
+    font-size: 13px;
+    margin-top: 5px;
+  }

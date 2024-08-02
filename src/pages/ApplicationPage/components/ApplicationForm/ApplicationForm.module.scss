@@ -1,0 +1,47 @@
+@import '../../../../app/styles/animation.scss';
+@import '../../../../app/styles/inputIcon.scss';
+
+.container {
+    padding: 76px 31px 0;
+    height: 872px;
+    @include slideIn(0.5s);
+
+    .infoWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+
+        h3 {
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 13px;
+            margin-top: 48px;
+        }
+
+        .error {
+            color: var(--error-color);
+            font-size: 13px;
+            margin-top: 5px;
+        }
+    }
+
+    .btnsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 59px;
+        align-items: center;
+        margin-top: 48px;
+    }
+}
+
+.fio {
+    @include inputIcon('../../../../assets/icons/fio.svg');
+}
+
+.phone {
+    @include inputIcon('../../../../assets/icons/call.svg');
+}
+
+.email {
+    @include inputIcon('../../../../assets/icons/email.svg');
+}

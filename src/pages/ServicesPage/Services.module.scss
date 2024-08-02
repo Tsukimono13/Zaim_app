@@ -1,0 +1,49 @@
+@import '../../app/styles/animation.scss';
+
+.services {
+    height: 100%;
+    @include slideIn(0.5s);
+    padding: 76px 30px 68px;
+
+    p, li, ul {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 20px;
+    }
+}
+
+.photo {
+    margin: 48px 0 13px;
+}
+
+.title {
+    margin: 13px 0 23px;
+    text-transform: uppercase;
+}
+
+.description {
+    margin-bottom: 13px;
+}
+
+.list {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 23px;
+    
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 9px;
+            height: 9px;
+            background-color: var(--active-color);
+            border-radius: 50%;
+            top: 6px;
+        }
+    }
+}

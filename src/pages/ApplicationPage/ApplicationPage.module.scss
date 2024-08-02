@@ -1,0 +1,41 @@
+@import '../../app/styles/animation.scss';
+
+.container {
+    padding: 76px 31px 0;
+    height: 872px;
+    @include slideIn(0.5s);
+    position: relative;
+
+    p {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 13px;
+    }
+
+    .title {
+        margin: 48px 0 35px;
+    }
+
+    .sum {
+        position: absolute;
+        top: 34%;
+        left: 39%;
+    }
+
+    .btnsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 59px;
+        align-items: center;
+    }
+
+    .sliderContainer {
+        display: flex;
+        justify-content: center;
+    }
+}
+.terms {
+    position: relative;
+    right: 0;
+}
+

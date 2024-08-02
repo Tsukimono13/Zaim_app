@@ -1,0 +1,47 @@
+@import './../../app/styles/animation.scss';
+
+.container {
+    padding: 76px 31px 0;
+    height: 872px;
+    @include slideIn(0.5s);
+
+    header {
+        margin-bottom: 70px;
+    }
+}
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 31px;
+    margin-top: 51px;
+
+    button {
+        width: 190px;
+        height: 40px;
+    }
+}
+
+.modal {
+    padding: 35px 41px;
+
+    .codeText {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 19px;
+        text-align: center;
+        margin-bottom: 26px;
+    }
+
+    button {
+        width: 137px;
+        height: 40px;
+    }
+}
+
+.error {
+    color: var(--error-color);
+    font-size: 13px;
+    margin-top: 5px;
+}

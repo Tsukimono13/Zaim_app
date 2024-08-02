@@ -1,0 +1,10 @@
+@import '../../app/styles/animation.scss';
+
+.container {
+    height: 100%;
+    @include slideIn(0.5s);
+
+    .wrapper {
+        padding: 76px 31px 0;
+    }
+}

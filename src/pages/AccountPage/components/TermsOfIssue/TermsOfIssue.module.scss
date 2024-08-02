@@ -1,0 +1,26 @@
+.modal {
+    max-width: 331px;
+    padding: 37px 13px;
+
+    h3 {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 19px;
+        margin-bottom: 25px;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 18px;
+        letter-spacing: 0.6px;
+        margin-bottom: 5px;
+    }
+
+    .btnContainer {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

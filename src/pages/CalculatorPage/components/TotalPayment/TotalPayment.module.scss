@@ -1,0 +1,52 @@
+.result {
+    background-color: var(--primary-color);
+    padding: 42px 31px;
+
+    .resultItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 29px;
+
+        p,
+        span {
+            font-weight: 700;
+        }
+
+
+        p {
+            font-size: 13px;
+            line-height: 13px;
+        }
+
+        span {
+            font-size: 20px;
+            line-height: 19px;
+            color: var(--active-color);
+        }
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 14px;
+        gap: 59px;
+    }
+}
+
+.modal {
+    padding: 43px 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+
+    p {
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 19px;
+    }
+}
