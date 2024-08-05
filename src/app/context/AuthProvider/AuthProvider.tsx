@@ -30,6 +30,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const logout = () => {
     localStorage.removeItem('zaim_user');
+    localStorage.removeItem('loans');
     setIsLoggedIn(false);
   };
 

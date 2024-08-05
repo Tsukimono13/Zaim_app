@@ -22,8 +22,10 @@ export const ApplicationPage = () => {
     return <App />;
   }
 
+  const loanSum = Number(pointers[0].value) || 1000;
+
   if (showDatesLoan) {
-    return <DatesLoan />;
+    return <DatesLoan sum={loanSum}/>;
   }
 
   return (

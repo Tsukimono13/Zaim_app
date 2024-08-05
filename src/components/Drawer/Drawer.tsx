@@ -1,11 +1,11 @@
 import { useDrag } from "@use-gesture/react";
 import { a, useSpring, config } from "@react-spring/web";
 import styles from "./Drawer.module.scss";
-import OpenIcon from "@/assets/icons/open.svg";
-import CloseIcon from "@/assets/icons/close.svg";
-import ClockImg from "@/assets/img/clock.png";
-import HandsImg from "@/assets/img/meeting.png";
-import FamilyImg from "@/assets/img/family.png";
+import OpenIcon from "../../assets/icons/open.svg";
+import CloseIcon from "../../assets/icons/close.svg";
+import ClockImg from "../../assets/img/clock.png";
+import HandsImg from "../../assets/img/meeting.png";
+import FamilyImg from "../../assets/img/family.png";
 import { useState } from "react";
 
 const items = [

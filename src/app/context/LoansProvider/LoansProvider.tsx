@@ -1,10 +1,11 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 
 export enum LoanStatus {
   Active = "Aктивный",
   Completed = "Завершенный",
   UnderReview = "На рассмотрении",
 }
+
 export interface LoanType {
   id: number;
   sum: number;
@@ -36,22 +37,29 @@ const generateId = (loans: LoanType[]) => {
 const getCurrentDate = () => {
   const today = new Date();
   const dd = String(today.getDate()).padStart(2, '0');
-  const mm = String(today.getMonth() + 1).padStart(2, '0'); 
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
   const yyyy = today.getFullYear();
   return `${dd}.${mm}.${yyyy}`;
 };
 
 export const LoansProvider = ({ children }: { children: ReactNode }) => {
-  const [loans, setLoans] = useState<LoanType[]>([
-    {
-      id: 1,
-      sum: 45000,
-      return_sum: 49500,
-      application_date: "25.07.24",
-      return_date: "23.09.24",
-      status: LoanStatus.Active,
-    },
-  ]);
+  const [loans, setLoans] = useState<LoanType[]>(() => {
+    const savedLoans = localStorage.getItem('loans');
+    return savedLoans ? JSON.parse(savedLoans) : [
+      {
+        id: 1,
+        sum: 45000,
+        return_sum: 49500,
+        application_date: "25.07.24",
+        return_date: "23.09.24",
+        status: LoanStatus.Active,
+      },
+    ];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('loans', JSON.stringify(loans));
+  }, [loans]);
 
   const addLoan = (loan: Omit<LoanType, 'id' | 'application_date'>) => {
     const newLoan: LoanType = {

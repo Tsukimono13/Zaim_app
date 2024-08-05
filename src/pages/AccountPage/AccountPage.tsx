@@ -24,10 +24,25 @@ export const AccountPage = () => {
   };
 
   const handlePhoneNumber = () => {
-    if (inputValue === "+7 (917) 404 12 34") {
-      setIsOpen(true);
-    } else {
+    if (!inputValue.trim()) {
+      setError("Номер телефона обязателен для заполнения.");
+      return;
+    }
+
+    if (inputValue !== "+7 (917) 404 12 34") {
       setError("Неверный номер. Пожалуйста, попробуйте снова.");
+      return;
+    }
+
+    setError("");
+    setIsOpen(true);
+  };
+
+  const handleCodeButtonClick = () => {
+    if (inputValue.trim()) {
+      setShowInterCode(true);
+    } else {
+      setError("Номер телефона обязателен для заполнения.");
     }
   };
 
@@ -36,7 +51,7 @@ export const AccountPage = () => {
   }
 
   if (isLoggedIn) {
-    return <AccountOffice />
+    return <AccountOffice />;
   }
 
   return (
@@ -56,7 +71,11 @@ export const AccountPage = () => {
           {error && <p className={styles.error}>{error}</p>}
           <div className={styles.btnContainer}>
             <Button onClick={handlePhoneNumber}>Получить код по СМС</Button>
-            <Button onClick={() => setShowInterCode(true)}>Ввести код</Button>
+            <Button 
+              onClick={handleCodeButtonClick}
+            >
+              Ввести код
+            </Button>
           </div>
           <Modal isOpen={isOpen} setIsOpen={setIsOpen} className={styles.modal}>
             <h3 className={styles.codeText}>Код отправлен</h3>

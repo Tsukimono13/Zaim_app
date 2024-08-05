@@ -7,6 +7,7 @@ import {
   useLoans,
 } from "@/app/context/LoansProvider/LoansProvider";
 import { roundNumbers } from "@/lib/roundNumbers/roundNumbers";
+import { getCurrentDate } from "@/lib/getCurrentDate/getCurrentDate";
 
 interface SmartCalculatorProps {
   setShowAccountPage: (value: boolean) => void;
@@ -53,11 +54,6 @@ export const SmartCalculator = (props: SmartCalculatorProps) => {
       return_date: getReturnDate(),
       status: LoanStatus.UnderReview,
     });
-  };
-
-  const getCurrentDate = () => {
-    const today = new Date();
-    return today.toLocaleDateString("ru-RU");
   };
 
   const getReturnDate = () => {

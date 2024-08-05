@@ -6,8 +6,17 @@ import { Button, ThemeButton } from "@/components/Button";
 import { TermsOfIssue } from "@/pages/AccountPage/components/TermsOfIssue";
 import { DatesLoan } from "../DatesLoan";
 import { SuccessScreen } from "../SuccessScreen";
+import { LoanStatus, useLoans } from "@/app/context/LoansProvider/LoansProvider";
+import { roundNumbers } from "@/lib/roundNumbers/roundNumbers";
+import { getCurrentDate } from "@/lib/getCurrentDate/getCurrentDate";
 
-export const ApplicationForm = () => {
+interface ApplicationFormProps {
+  sum: number;
+  days: number;
+}
+
+export const ApplicationForm = (props: ApplicationFormProps) => {
+  const { sum, days } = props;
   const [prevPage, setPrevPage] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -16,6 +25,9 @@ export const ApplicationForm = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState<{ fio?: string; email?: string }>({});
+
+  const { addLoan } = useLoans();
+  const [totalPayment, setTotalPayment] = useState(1001);
 
   const validate = () => {
     const newErrors: { fio?: string; email?: string } = {};
@@ -33,11 +45,34 @@ export const ApplicationForm = () => {
 
     return Object.keys(newErrors).length === 0;
   };
+console.log(days)
+  const calculateLoan = () => {
+    const dailyRate = 0.5 / 100 / 365;
+    const overPayment = sum * dailyRate * days;
+    const totalPayment = sum + overPayment;
+
+    setTotalPayment(roundNumbers(totalPayment));
+  };
 
   const handleSubmit = () => {
     if (validate()) {
+      const newLoan = {
+        sum,
+        return_sum: roundNumbers(totalPayment),
+        application_date: getCurrentDate(),
+        return_date: getReturnDate(),
+        status: LoanStatus.UnderReview,
+      };
+      calculateLoan();
+      addLoan(newLoan);
       setShowSuccess(true);
     }
+  };
+
+  const getReturnDate = () => {
+    const returnDate = new Date();
+    returnDate.setDate(returnDate.getDate() + days);
+    return returnDate.toLocaleDateString("ru-RU");
   };
 
   if (prevPage) {
